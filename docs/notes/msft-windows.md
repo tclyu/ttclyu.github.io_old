@@ -123,3 +123,12 @@ else {
 query user /server:SERVERNAME
 logoff SESSIONID /server:SERVERNAME
 ```
+#### Add User To Local Group
+```cmd
+$computer = "cn8011dwfort27"
+$domainUser = "ry/wych"
+$group = "administrators"
+$groupObj = [adsi]"WinNT://$computer/$group,group"
+$userObj = [adsi]"WinNT://$domainUser,user"
+$groupObj.add($userObj.Path)
+```
