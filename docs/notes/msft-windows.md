@@ -125,9 +125,9 @@ logoff SESSIONID /server:SERVERNAME
 ```
 #### Add User To Local Group
 ```cmd
-$computer = "cn8011dwfort27"
-$domainUser = "ry/wych"
-$group = "administrators"
+$computer = "COMPUTERNAME"
+$domainUser = "LogiStellar/tclyu"
+$group = "Administrators"
 $groupObj = [adsi]"WinNT://$computer/$group,group"
 $userObj = [adsi]"WinNT://$domainUser,user"
 $groupObj.add($userObj.Path)
