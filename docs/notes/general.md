@@ -14,3 +14,9 @@ Gold Images
 GOLD-WS19DCCORE-2004
 gold image, Windows Server DataCenter Core, 2004
 ```
+#### Vmware Workstation: Run PowerShell Script From Local Share
+```PowerShell
+$ScriptPath
+& "\\vmware-host\shared folders\$ScriptPath"
+```
+```
