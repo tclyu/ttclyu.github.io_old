@@ -11,7 +11,7 @@ setup64.exe /S /v “/qn REBOOT=R ADDLOCAL=ALL REMOVE=PerfMon”
 #### How To Press F11 during Installation?
 F11 key is nested. Press Fn + Cmd + F11 instead.
 
-## Install PowerCLi on Mac
+## Install PowerCLI on Mac
 ```PowerShell
 # Enter PowerShell
 pwsh
