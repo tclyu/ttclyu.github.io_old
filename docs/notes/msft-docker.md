@@ -4,9 +4,9 @@
 $provider = Get-Package DockerMsftProvider
 if (!$provider) {
     # Install the OneGet PowerShell module.
-    Install-Module -Name DockerMsftProvider -Repository PSGallery -Force
+    Install-Module -Name DockerMsftProvider -Repository PSGallery -Force -Confirm:$false
     # Use OneGet to install the latest version of Docker.
-    Install-Package -Name docker -ProviderName DockerMsftProvider
+    Install-Package -Name docker -ProviderName DockerMsftProvider -Confirm:$false
     # When the installation is complete, reboot the computer.
     Restart-Computer -Force
 } # install DockerMsftProvider package
