@@ -3,7 +3,6 @@
 ```
 Menu > Options > Enable Boot Logging
 ```
-# SysInternals - ProcMon
 #### Execute ProcMon Remotely
 ```cmd
 psexec \\10.15.232.21 /s /d procmon.exe /accepteula /quiet /backingfile c:\MyTemp\proc.pml
@@ -12,3 +11,9 @@ psexec \\10.15.232.21 /s /d procmon.exe /accepteula /quiet /backingfile c:\MyTem
 session
 window station
 window message
+# SysInternals - WinDbg
+#### Set Symbol server
+https://docs.microsoft.com/zh-cn/windows-hardware/drivers/debugger/microsoft-public-symbols
+```cmd
+set _NT_SYMBOL_PATH=srv*DownstreamStore*https://msdl.microsoft.com/download/symbols
+```
