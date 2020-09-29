@@ -10,3 +10,12 @@ setup64.exe /S /v “/qn REBOOT=R ADDLOCAL=ALL REMOVE=PerfMon”
 ## Installing Vmware ESXi
 #### How To Press F11 during Installation?
 F11 key is nested. Press Fn + Cmd + F11 instead.
+
+## Install PowerCLi on Mac
+```PowerShell
+# Enter PowerShell
+pwsh
+
+# Install Vmware.PowerCLI module
+Install-Module -Name Vmware.PowerCLI
+```
