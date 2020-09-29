@@ -1,5 +1,5 @@
-#FilePath: https://raw.githubusercontent.com/Tuochenlyu/tuochenlyu.github.io/master/scripts/Install-Docker.ps1
-$provider = Get-Package DockerMsftProvider
+# iex ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercontent.com/Tuochenlyu/tuochenlyu.github.io/master/scripts/Install-Docker.ps1'))
+$provider = Get-Package DockerMsftProvider -ErrorAction:Ignore
 
 if (!$provider) {
     # Install the OneGet PowerShell module.
