@@ -50,7 +50,7 @@ imazing
 intellij-idea
 epic-games
 cisco-jabber
+tencent-meeting
 # openconnect-gui #has security issue.
 splashtop-personal
-
 ```
