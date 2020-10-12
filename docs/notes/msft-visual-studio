@@ -1,0 +1,6 @@
+# Visual Studio
+#### Silent install
+Download all components.
+```
+vs_enterprise__2076458798.1599189412.exe --layout C:\Users\TuochenLyu\Downloads\VS2019Ent
+```
