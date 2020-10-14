@@ -11,16 +11,21 @@ choco {{packageName}} -y
 choco {packages} -y --exit-when-reboot-detected
 ```
 ### Choco Packages
+#### Common
+```
+7zip firefox googlechrome notepadplusplus winrar
+```
 #### Development
 ```
-choco install -y 7zip beyondcompare filezilla firefox googlechrome microsoft-message-analyzer nirlauncher notepadplusplus powershell-core putty sql-server-management-studio sysinternals treesizefree vscode wireshark winrar winscp wsus-offline-update
+choco install -y beyondcompare filezilla microsoft-message-analyzer nirlauncher powershell-core putty sql-server-management-studio sysinternals vscode wireshark winscp wsus-offline-update
+```
+#### Productivity
+```
+microsoft-teams paint.net youtube-dl treesizefree
 ```
 ```
 openssh
 python3
 autohotkey
 winlogbeat
-microsoft-teams
-paint.net
-youtube-dl
 ```
