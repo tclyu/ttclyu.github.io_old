@@ -17,7 +17,7 @@ choco {packages} -y --exit-when-reboot-detected
 ```
 #### Development
 ```
-choco install -y beyondcompare filezilla microsoft-message-analyzer nirlauncher powershell-core putty sql-server-management-studio sysinternals vscode wireshark winscp wsus-offline-update
+choco install -y beyondcompare filezilla nirlauncher powershell-core putty sql-server-management-studio sysinternals vscode wireshark winscp wsus-offline-update
 ```
 #### Productivity
 ```
@@ -28,4 +28,8 @@ openssh
 python3
 autohotkey
 winlogbeat
+```
+#### Depreciated
+```
+microsoft-message-analyzer # https://docs.microsoft.com/en-us/openspecs/blog/ms-winintbloglp/dd98b93c-0a75-4eb0-b92e-e760c502394f
 ```
