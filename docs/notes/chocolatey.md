@@ -21,7 +21,7 @@ choco install -y beyondcompare filezilla nirlauncher powershell-core putty sql-s
 ```
 #### Productivity
 ```
-microsoft-teams paint.net youtube-dl treesizefree
+microsoft-teams paint.net youtube-dl treesizefree goodsync
 ```
 ```
 openssh
