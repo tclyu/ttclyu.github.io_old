@@ -53,4 +53,5 @@ cisco-jabber
 tencent-meeting
 # openconnect-gui #has security issue.
 splashtop-personal
+voov-meeting
 ```
