@@ -108,4 +108,21 @@ New-ADOrganizationalUnit $deviceOuName -Path $domainRootDN
 New-ADOrganizationalUnit $principalOuName -Path $domainRootDN
 New-ADOrganizationalUnit $corporationOuName -Path $domainRootDN
 ```
-###
+#### Search string in GPO
+```powershell
+# Search for a string in all GPOs in a domain. Returns the DisplayName of the GPO.
+$stringToSearch # string to search
+$domainName = $env:USERDNSDOMAIN # domain to search
+
+Import-Module GroupPolicy
+$allGposInDomain = Get-GPO -All -Domain $DomainName
+foreach ($gpo in $allGposInDomain) {
+    $report = Get-GPOReport -Guid $gpo.Id -ReportType Xml
+    if ($report -match $stringToSearch) {
+        write-host "String $stringToSearch found in: $($gpo.DisplayName)."
+    }
+    else {
+        Write-Host "No match found in: $($gpo.DisplayName)"
+    }
+}
+```
