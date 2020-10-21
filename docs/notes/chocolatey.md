@@ -10,6 +10,7 @@ choco {{packageName}} -y
 ### Choco Packages
 ```
 wireshark
+nirlauncher
 notepadplusplus
 microsoft-message-analyzer
 googlechrome
