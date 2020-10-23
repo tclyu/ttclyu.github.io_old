@@ -118,7 +118,7 @@ else {
     Write-Host "All RSAT features seems to be installed already"
 }
 ```
-#### Query and Kick User From Remote Sesion
+#### Query and kick user remotely
 ```BAT
 query user /server:SERVERNAME
 logoff SESSIONID /server:SERVERNAME
