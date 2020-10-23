@@ -123,3 +123,9 @@ else {
 query user /server:SERVERNAME
 logoff SESSIONID /server:SERVERNAME
 ```
+#### Export EFS private key
+```PowerShell
+$filePath = "$env:USERPROFILE\Documents\efs_${env:USERDOMAIN}_${env:USERNAME}.pfx" # path of exported file
+$password = Read-Host -AsSecureString "Provide password..."
+Get-ChildItem -Path Cert:\CurrentUser\My | Export-PfxCertificate $filePath -Password $password
+```
