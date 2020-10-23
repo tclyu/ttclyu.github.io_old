@@ -124,9 +124,14 @@ query user /server:SERVERNAME
 logoff SESSIONID /server:SERVERNAME
 ```
 #### Export EFS private key
+https://docs.microsoft.com/en-us/powershell/module/pkiclient/export-pfxcertificate?view=win10-ps
 ```PowerShell
 $filePath = "$env:USERPROFILE\Documents\efs_${env:USERDOMAIN}_${env:USERNAME}.pfx" # path of exported file
 $password = Read-Host -AsSecureString "Provide password..."
 Get-ChildItem -Path Cert:\CurrentUser\My | Export-PfxCertificate -FilePath $filePath -Password $password
+```
+#### Import EFS private key
+https://docs.microsoft.com/en-us/powershell/module/pkiclient/import-pfxcertificate?view=win10-ps
+```PowerShell
 
 ```
