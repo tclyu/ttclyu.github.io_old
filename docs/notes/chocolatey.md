@@ -36,5 +36,5 @@ powershell-core
 ```
 #### Production Packages
 ```
-choco install -y notepadplusplus googlechrome winrar treesizefree youtube-dl internet-download-manager windscribe
+choco install -y notepadplusplus googlechrome winrar treesizefree youtube-dl internet-download-manager windscribe microsoft-edge
 ```
