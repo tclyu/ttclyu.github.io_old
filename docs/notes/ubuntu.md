@@ -10,7 +10,7 @@ sudo apt update
 sudo apt install subversion g++ zlib1g-dev build-essential git python python3 python3-distutils libncurses5-dev gawk gettext unzip file libssl-dev wget libelf-dev ecj fastjar java-propose-classpath
 rsync swig time python3-setuptools libncursesw5-dev ccache xsltproc
 ```
-#### Youtube-dl
+#### Apps
 ```
-sudo apt install youtube-dl synaptic
+sudo apt install vim youtube-dl synaptic python golang
 ```
