@@ -40,3 +40,11 @@ dependencywalker
 choco install -y notepadplusplus googlechrome winrar treesizefree youtube-dl internet-download-manager windscribe microsoft-edge teamviewer
 
 ```
+#### Development Packages
+```
+choco install -y 
+```
+#### Test Packages
+```
+choco install -y dependencywalker
+```
