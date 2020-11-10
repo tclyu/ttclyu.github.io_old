@@ -32,7 +32,8 @@ sql-server-management-studio
 winscp
 youtube-dl
 wsus-offline-update
-powershell-core 
+powershell-core
+dependencywalker
 ```
 #### Production Packages
 ```
