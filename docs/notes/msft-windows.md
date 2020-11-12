@@ -140,3 +140,8 @@ https://docs.microsoft.com/en-us/powershell/module/pkiclient/import-pfxcertifica
 Set-ItemProperty -Path 'HKLM:\System\CurrentControlSet\Control\Terminal Server' -name "fDenyTSConnections" -value 0
 Enable-NetFirewallRule -DisplayGroup "Remote Desktop"
 ```
+#### Disable Firewall
+This command overrides GPO settings, for a moment.
+```
+Set-NetFirewallProfile   -Name domain,private,public -Enabled False
+```
