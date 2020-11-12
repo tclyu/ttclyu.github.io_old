@@ -9,8 +9,8 @@ Invoke-Command -ComputerName MBP-DEV.LogiStellar.internal -scriptblock {net loca
 Invoke-Command -ComputerName MBP-DEV.LogiStellar.internal -scriptblock {Add-LocalGroupMember -Group Administrators -Member "LogiStellar\tclyu"}
 ```
 ```cmd
-$computer = "cn8011dwfort27"
-$domainUser = "ry/wych"
+$computer = "computerName"
+$domainUser = "domainName/samAccountName"
 $group = "administrators"
 $groupObj = [adsi]"WinNT://$computer/$group,group"
 $userObj = [adsi]"WinNT://$domainUser,user"
@@ -18,11 +18,11 @@ $groupObj.add($userObj.Path)
 ```
 #### Copy dump files
 ```CMD
-robocopy \\CN8011SWDFSN01.ry.com\C$\Windows\MiniDump c:\users\tclv_adadmin\documents\minidumps\CN8011SWDFSN01.ry.com
+robocopy \\serverFqdn\C$\Windows\MiniDump c:\users\tclv_adadmin\documents\minidumps\serverFqdn
 ```
 #### Office Document Icon Mssing After Uninstall WPS
 ```CMD
-rem 修复office文件默认图标.bat
+rem Restore MS Office default icon modified by WPS
  
 :: Change path to real path of target computer
 set officepath=C:\Program Files\Microsoft Office\Office16\
