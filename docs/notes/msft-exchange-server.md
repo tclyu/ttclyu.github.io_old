@@ -238,3 +238,9 @@ $result = New-Object PSObject -Property @{
 }
 return $result
 ```
+#### Export Transport Rules
+```PowerShell
+$filePath # end with .xml
+
+$file = Export-TransportRuleCollection -ExportLegacyRules; Set-Content -Path $filePath -Value $file.FileData -Encoding Byte
+```
