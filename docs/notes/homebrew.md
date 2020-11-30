@@ -56,4 +56,5 @@ splashtop-personal
 downie
 little-snitch
 goodsync
+voov-meeting
 ```
