@@ -146,6 +146,7 @@ This command overrides GPO settings, for a moment.
 Set-NetFirewallProfile   -Name domain,private,public -Enabled False
 ```
 #### Export all drivers to folder
+https://docs.microsoft.com/en-us/windows-hardware/drivers/devtest/pnputil
 ```cmd
 PnPUtil /export-driver * c:\mytemp\driverExport
 ```
