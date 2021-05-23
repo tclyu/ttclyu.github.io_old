@@ -24,10 +24,41 @@ choco install -y beyondcompare filezilla nirlauncher powershell-core putty sql-s
 microsoft-teams paint.net youtube-dl treesizefree goodsync
 ```
 ```
+wireshark
+nirlauncher
+notepadplusplus
+googlechrome
+firefox
+7zip
 openssh
 python3
 autohotkey
 winlogbeat
+filezilla
+microsoft-teams
+paint.net
+vscode
+treesizefree
+sql-server-management-studio
+winscp
+youtube-dl
+wsus-offline-update
+powershell-core
+dependencywalker
+```
+#### Production Packages
+```
+choco install -y notepadplusplus googlechrome winrar treesizefree youtube-dl internet-download-manager windscribe microsoft-edge teamviewer
+
+```
+#### Development Packages
+```
+choco install -y 
+```
+#### Test Packages
+```
+choco install -y dependencywalker
+=======
 ```
 #### Depreciated
 ```

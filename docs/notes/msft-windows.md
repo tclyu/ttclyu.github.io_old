@@ -9,8 +9,8 @@ Invoke-Command -ComputerName MBP-DEV.LogiStellar.internal -scriptblock {net loca
 Invoke-Command -ComputerName MBP-DEV.LogiStellar.internal -scriptblock {Add-LocalGroupMember -Group Administrators -Member "LogiStellar\tclyu"}
 ```
 ```cmd
-$computer = "cn8011dwfort27"
-$domainUser = "ry/wych"
+$computer = "computerName"
+$domainUser = "domainName/samAccountName"
 $group = "administrators"
 $groupObj = [adsi]"WinNT://$computer/$group,group"
 $userObj = [adsi]"WinNT://$domainUser,user"
@@ -18,11 +18,11 @@ $groupObj.add($userObj.Path)
 ```
 #### Copy dump files
 ```CMD
-robocopy \\CN8011SWDFSN01.ry.com\C$\Windows\MiniDump c:\users\tclv_adadmin\documents\minidumps\CN8011SWDFSN01.ry.com
+robocopy \\serverFqdn\C$\Windows\MiniDump c:\users\tclv_adadmin\documents\minidumps\serverFqdn
 ```
 #### Office Document Icon Mssing After Uninstall WPS
 ```CMD
-rem 修复office文件默认图标.bat
+rem Restore MS Office default icon modified by WPS
  
 :: Change path to real path of target computer
 set officepath=C:\Program Files\Microsoft Office\Office16\
@@ -118,8 +118,35 @@ else {
     Write-Host "All RSAT features seems to be installed already"
 }
 ```
-#### Query and Kick User From Remote Sesion
+#### Query and kick user remotely
 ```BAT
 query user /server:SERVERNAME
 logoff SESSIONID /server:SERVERNAME
+```
+#### Export EFS private key
+https://docs.microsoft.com/en-us/powershell/module/pkiclient/export-pfxcertificate?view=win10-ps
+```PowerShell
+$filePath = "$env:USERPROFILE\Documents\efs_${env:USERDOMAIN}_${env:USERNAME}.pfx" # path of exported file
+$password = Read-Host -AsSecureString "Provide password..."
+Get-ChildItem -Path Cert:\CurrentUser\My | Export-PfxCertificate -FilePath $filePath -Password $password
+```
+#### Import EFS private key
+https://docs.microsoft.com/en-us/powershell/module/pkiclient/import-pfxcertificate?view=win10-ps
+```PowerShell
+
+```
+#### Enable RDP
+```
+Set-ItemProperty -Path 'HKLM:\System\CurrentControlSet\Control\Terminal Server' -name "fDenyTSConnections" -value 0
+Enable-NetFirewallRule -DisplayGroup "Remote Desktop"
+```
+#### Disable Firewall
+This command overrides GPO settings, for a moment.
+```
+Set-NetFirewallProfile   -Name domain,private,public -Enabled False
+```
+#### Export all drivers to folder
+https://docs.microsoft.com/en-us/windows-hardware/drivers/devtest/pnputil
+```cmd
+PnPUtil /export-driver * c:\mytemp\driverExport
 ```

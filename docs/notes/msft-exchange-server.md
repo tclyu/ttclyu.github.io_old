@@ -238,3 +238,18 @@ $result = New-Object PSObject -Property @{
 }
 return $result
 ```
+#### Export Transport Rules
+```PowerShell
+$filePath # end with .xml
+
+$file = Export-TransportRuleCollection -ExportLegacyRules; Set-Content -Path $filePath -Value $file.FileData -Encoding Byte
+```
+#### Export mailbox delegation
+```PowerShell
+$exportPath # csv file
+Get-Mailbox -ResultSize Unlimited
+	| Get-MailboxPermission
+		| where {$_.user.tostring() -ne "NT AUTHORITY\SELF" -and $_.IsInherited -eq $false}
+			| Select Identity,User,@{Name='AccessRights';Expression={[string]::join(', ', $_.AccessRights)}}
+				| Export-Csv -NoTypeInformation $exportPath
+```
